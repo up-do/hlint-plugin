@@ -4,5 +4,4 @@
 
   in  ''
       ${./cabal-snippet.dhall}
-      ${project-dhall2config stackage-resolver ghc-version}
-      ''
+      ${project-dhall2config stackage-resolver ghc-version}''
