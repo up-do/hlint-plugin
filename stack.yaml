@@ -1,0 +1,20 @@
+user-message: "WARNING: This stack project is generated."
+
+flags:
+  hlint:
+    ghc-lib: false
+  ghc-lib-parser-ex:
+    no-ghc-lib: true
+
+resolver: lts-19.33
+
+# We have 1 packages.
+packages:
+  - ./.
+
+# We have 0 source packages listed in this order:
+#   * external 0
+#   * internal 0
+#   * external forks 0
+#   * internal forks 0
+extra-deps: []
