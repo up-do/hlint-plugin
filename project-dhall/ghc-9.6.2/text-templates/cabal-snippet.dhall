@@ -2,7 +2,9 @@
 program-options
   ghc-options: -fhide-source-paths
 
-constraints:
-    hlint -ghc-lib
-  , ghc-lib-parser-ex +no-ghc-lib
+package hlint
+  flags: -ghc-lib
+
+package ghc-lib-parser-ex
+  flags: +no-ghc-lib
 ''
