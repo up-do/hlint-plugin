@@ -22,6 +22,7 @@ in  \(pkgs-done : List Text) ->
 
       in  ''
           ${../../../updo/text-templates/dhall2cabal.dhall
+              TYPES.Stackage.StackageWeb
               stackage-resolver
               ( if    null Text pkgs-todo
                 then  TYPES.PkgSet.AllPkgs pkgs-done

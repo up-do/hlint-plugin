@@ -7,7 +7,7 @@ package hlint
 package ghc-lib-parser-ex
   flags: +no-ghc-lib
 
-import: ./project-stackage/nightly-2023-09-14.config
+import: https://stackage.org/nightly-2023-09-14/cabal.config
 
 import: ./project-cabal/pkgs.config
 build-info: True

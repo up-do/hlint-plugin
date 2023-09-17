@@ -1,3 +1,5 @@
+let TYPES = ./../../../updo/types.dhall
+
 let empty-constraints = ./../../../updo/empty/constraints.dhall
 
 let empty-source-pkgs = ./../../../updo/empty/source-pkgs.dhall
@@ -18,4 +20,8 @@ in  \(stackage-resolver : Text) ->
 
       in  ''
           ${./cabal-snippet.dhall}
-          ${project-dhall2config stackage-resolver ghc-version pkg-config}''
+          ${project-dhall2config
+              TYPES.Stackage.StackageWeb
+              stackage-resolver
+              ghc-version
+              pkg-config}''
