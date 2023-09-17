@@ -1,17 +1,21 @@
-\(stackage-resolver : Text) ->
-\(ghc-version : Text) ->
-  let project-dhall2config = ../../../updo/text-templates/dhall2config.dhall
+let empty-constraints = ./../../../updo/empty/constraints.dhall
 
-  let pkg-config =
-        { constraints = ./../constraints.dhall
-        , source-pkgs =
-          { deps-external = ./../deps-external.dhall
-          , deps-internal = ./../deps-internal.dhall
-          , forks-external = ./../forks-external.dhall
-          , forks-internal = ./../forks-internal.dhall
-          }
-        }
+let empty-source-pkgs = ./../../../updo/empty/source-pkgs.dhall
 
-  in  ''
-      ${./cabal-snippet.dhall}
-      ${project-dhall2config stackage-resolver ghc-version pkg-config}''
+in  \(stackage-resolver : Text) ->
+    \(ghc-version : Text) ->
+      let project-dhall2config = ../../../updo/text-templates/dhall2config.dhall
+
+      let pkg-config =
+            { constraints = ./../constraints.dhall ? empty-constraints
+            , source-pkgs =
+              { deps-external = ./../deps-external.dhall ? empty-source-pkgs
+              , deps-internal = ./../deps-internal.dhall ? empty-source-pkgs
+              , forks-external = ./../forks-external.dhall ? empty-source-pkgs
+              , forks-internal = ./../forks-internal.dhall ? empty-source-pkgs
+              }
+            }
+
+      in  ''
+          ${./cabal-snippet.dhall}
+          ${project-dhall2config stackage-resolver ghc-version pkg-config}''

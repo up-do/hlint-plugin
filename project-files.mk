@@ -46,5 +46,5 @@ endif
 
 updo/Makefile:
 	rm -rf updo
-	git clone --depth=1 --branch skip-empty-config git@github.com:cabalism/updo
+	git clone --depth=1 --branch skip-empty-dhall git@github.com:cabalism/updo
 	chmod +x $$(grep -RIl '^#!' updo)
