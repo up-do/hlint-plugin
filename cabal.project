@@ -10,11 +10,4 @@ package ghc-lib-parser-ex
 import: ./project-stackage/lts-19.33.config
 
 import: ./project-cabal/pkgs.config
-
-import: ./project-cabal/ghc-9.0.2/constraints.config
-import: ./project-cabal/ghc-9.0.2/deps-external.config
-import: ./project-cabal/ghc-9.0.2/deps-internal.config
-import: ./project-cabal/ghc-9.0.2/forks-external.config
-import: ./project-cabal/ghc-9.0.2/forks-internal.config
-
 build-info: True

@@ -44,12 +44,7 @@ endif
 
 .DEFAULT_GOAL := all
 
-UPDO_VERSION ?= 1.0.0
-HACKAGE := http://hackage.haskell.org/package
-UPDO_URL := ${HACKAGE}/updo-${UPDO_VERSION}/updo-${UPDO_VERSION}.tar.gz
-
 updo/Makefile:
 	rm -rf updo
-	curl -sSL ${UPDO_URL} | tar -xz
-	mv updo-${UPDO_VERSION} updo
+	git clone --depth=1 --branch skip-empty-config git@github.com:cabalism/updo
 	chmod +x $$(grep -RIl '^#!' updo)
