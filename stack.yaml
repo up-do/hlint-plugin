@@ -8,13 +8,8 @@ flags:
 
 resolver: lts-19.33
 
-# We have 1 packages.
+# We have 1 package.
 packages:
   - ./.
 
-# We have 0 source packages listed in this order:
-#   * external 0
-#   * internal 0
-#   * external forks 0
-#   * internal forks 0
 extra-deps: []
